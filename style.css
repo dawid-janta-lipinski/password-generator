@@ -26,6 +26,7 @@ h3{
     background-color: rgba(0,0,0,0.7);
     width: 80%;
     max-width: 600px;
+    height: 450px;
     border-radius: 10px;
     padding: 50px;
     display: flex;
@@ -41,7 +42,6 @@ h3{
     align-items: center;
     height: 45px;
     width: 100%;
-    margin-bottom: 20px;
     font-size: 16px;
 
 }
@@ -79,7 +79,8 @@ h3{
 }
 
 .password-length{
-    margin: 10px 0;
+    margin-top: 20px;
+    margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -125,4 +126,13 @@ h3{
 #clipboard:active {
   box-shadow: 2px 2px #666;
   transform: translateY(2px);
+}
+
+span {
+    font-size: 0.8rem;
+    color: green;
+}
+
+.copy-info{
+    display: none;
 }

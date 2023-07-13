@@ -8,6 +8,7 @@ class PasswordGenerator{
         this.numbersCheckbox = document.querySelector("#numbers");
         this.symbolsCheckbox = document.querySelector("#symbols");
         this.generateButton = document.querySelector("#generate-password");
+        this.copyInfo = document.querySelector(".copy-info");
 
         this.init();
     }
@@ -70,6 +71,7 @@ class PasswordGenerator{
             passwordArr.push(method());
         }
         this.resultPassword.innerHTML = passwordArr.join("");
+        this.clipboardInfo();
     }
 
     getRandomGenMethod = () => {
@@ -80,9 +82,19 @@ class PasswordGenerator{
     copyToClipboard = () =>{
         const password = this.resultPassword.innerHTML;
         const cb = navigator.clipboard;
-        cb.writeText(password).
-        then( () => console.log("password copied to clipboard"));
+        cb.writeText(password);
+        this.clipboardInfo();
+        setTimeout(this.hideClipboardInfo, 2000);
     }
+
+    clipboardInfo = () =>{
+        this.copyInfo.classList.toggle("copy-info");
+    }
+
+    hideClipboardInfo = () =>{
+        this.copyInfo.classList.toggle("copy-info");
+    }
+
 }
 
 const passwordGenerator = new PasswordGenerator();
