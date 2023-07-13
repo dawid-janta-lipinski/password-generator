@@ -71,7 +71,7 @@ class PasswordGenerator{
             passwordArr.push(method());
         }
         this.resultPassword.innerHTML = passwordArr.join("");
-        this.clipboardInfo();
+
     }
 
     getRandomGenMethod = () => {
@@ -84,17 +84,12 @@ class PasswordGenerator{
         const cb = navigator.clipboard;
         cb.writeText(password);
         this.clipboardInfo();
-        setTimeout(this.hideClipboardInfo, 2000);
+        setTimeout(this.clipboardInfo, 1000);
     }
 
     clipboardInfo = () =>{
         this.copyInfo.classList.toggle("copy-info");
     }
-
-    hideClipboardInfo = () =>{
-        this.copyInfo.classList.toggle("copy-info");
-    }
-
 }
 
 const passwordGenerator = new PasswordGenerator();
